@@ -15,7 +15,7 @@ template class Matrix<unsigned int>;
 ...
 ````
 
-This is possible, by friending the ostream and overloading the << operator
+std::cout << A; is possible, by friending the ostream and overloading the << operator
 ````c++
 friend inline std::ostream& operator<<(std::ostream& os, const Matrix<T>& src)
 {
