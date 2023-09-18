@@ -8,7 +8,7 @@ strint is a string with added functionality of an bool, so branchless string ope
 In this module I tried using strict c++, its newer features, the stl, and avoided using raw pointers.
 
 
-This is required in the matrix.h, this denotes the possible types that the Matrix class can be.
+This is required in the Matrix.hpp, this denotes the possible types that the Matrix class can be.
 ````c++
 template class Matrix<int>;
 template class Matrix<unsigned int>;
