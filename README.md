@@ -29,7 +29,7 @@ Matrix<int> A(2,2,0);
 std::cout << A;
 ````
 
-With the use of initalizer lists:
+Allowing the use of initalizer lists on a Matrix class:
 ````c++
 #include <initializer_list>
 
