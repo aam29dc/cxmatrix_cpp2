@@ -43,6 +43,7 @@ Matrix<int> A{1,2,3,4,5};
 ````
 
 getting typeid at runtime with, typeid, but conditional types in overloaded ~ or - operators didn't work for floats
+
 ````c++
 typeid(int) == typeid(_m[0])
 ````
