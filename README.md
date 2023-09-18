@@ -5,7 +5,7 @@ strint is a string with added functionality of an bool, so branchless string ope
     return strint("Rows can't be zero.")*(rows <= 0) + strint("Cols can't be zero.")*(cols <= 0);
   ````
 
-In this module I tried using strict c++, its newer features, the stl, and avoid using raw pointers.
+In this module I tried using strict c++, its newer features, the stl, and avoided using raw pointers.
 
 
 This is required in the matrix.h, this denotes the possible types that the Matrix class can be.
