@@ -45,4 +45,11 @@ public:
 	inline T operator [] (const size_t index) const;
 };
 
+template <>
+class Matrix<std::size_t> : public Matrix<int> {
+public:
+	void only_size_t() {}
+};
+
+
 #endif
