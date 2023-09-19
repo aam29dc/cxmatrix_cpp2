@@ -64,7 +64,7 @@ pointer to class memebers, other than being more explicit on the type of pointer
 size_t Matrix<int>::* name = &Matrix<int>::accessible;
 ````
 
-annoymous namespace means the variables aren't included in other translation units:
+annoymous namespace means the variables aren't included in other translation units, this is prefered over the C static way:
 ````c++
 //header.hpp
 namespace {
