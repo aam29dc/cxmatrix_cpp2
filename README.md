@@ -93,3 +93,26 @@ A::B::B() {
 	//constructor
 }
 ````
+reference qualifiers for member functions, invoked for rvales (&&) or lvalues (&). Can have either both r/l-values or neither (regular function) only.
+````c++
+class C {
+public:
+	int data;
+	int ret_data() & {
+		return data;
+	}
+	int ret_data() && {
+		return data;
+	}
+};
+
+...
+
+void main(){
+	C c;
+	int x = 0;
+	x = c.ret_data();	// lvalue
+	x = C().ret_data();	// rvalue
+}
+````
+
