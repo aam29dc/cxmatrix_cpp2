@@ -13,6 +13,7 @@ private:
 	std::vector<T> _m;
 	static size_t _count;
 public:
+	size_t accessible;	//pointer to class member, can't be accessed if its private/protected
 	Matrix<T>(const size_t rows = 1, const size_t cols = 1, const T val = 0);
 	Matrix<T>(const std::initializer_list<T> l);
 	~Matrix<T>();
