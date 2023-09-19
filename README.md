@@ -47,3 +47,20 @@ getting typeid at runtime with, typeid, but conditional types in overloaded ~ or
 ````c++
 if(typeid(_m[0]) != typeid(float) && typeid(_m[0]) != typeid(double) ...)
 ````
+
+specialized template for certain types, ex: size_t, by inheriting we can also keep original class functions, etc
+````c++
+template <>
+class Matrix<std::size_t> : public Matrix<int> {
+public:
+	void only_size_t() {}
+};
+...
+Matrix<std::size_t> Mat;
+````
+
+pointer to class memebers, other than being more explicit on the type of pointer, idk other uses.
+````c++
+Matrix<int> A{1,2,3,4};
+size_t Matrix<int>::*name = &A._rows;
+````
