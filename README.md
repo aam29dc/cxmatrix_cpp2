@@ -77,3 +77,14 @@ namespace {
 #include <header.hpp>
 int x;	// this doesn't conflict with header.hpp x
 ````
+Nested classes, where we can define the nested class later.
+````c++
+class A{
+public:
+	class B;
+};
+...
+class A::B{
+public:
+};
+````
