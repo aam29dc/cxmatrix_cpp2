@@ -84,9 +84,12 @@ public:
 	class B;
 };
 
-...
-
 class A::B {
 public:
+	A::B();
 };
+
+A::B::B() {
+	//constructor
+}
 ````
