@@ -61,6 +61,5 @@ Matrix<std::size_t> Mat;
 
 pointer to class memebers, other than being more explicit on the type of pointer, idk other uses.
 ````c++
-Matrix<int> A{1,2,3,4};
-size_t Matrix<int>::*name = &A._rows;
+size_t Matrix<int>::* name = &Matrix<int>::accessible;
 ````
