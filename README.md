@@ -65,7 +65,7 @@ size_t Matrix<int>::* name = &Matrix<int>::accessible;
 ````
 
 annoymous namespace means the variables aren't included in other translation units:
-````c+++
+````c++
 //header.hpp
 namespace {
 	int x;
