@@ -120,6 +120,6 @@ lambda expressions or annoymous functions are usually, short, specific use, like
 [pass by value, or reference to body of function](function parameters) -> return type {function body}(invokes function);
 ````c++
 int n  = 5;
-auto a = [&n](const int val){ return val*5;}(3);
+auto a = [&n](const int val){ return val*n*5;}(3);	//returns 75
 ...
 ````
