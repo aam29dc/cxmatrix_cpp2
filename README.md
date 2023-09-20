@@ -117,9 +117,9 @@ void main(){
 ````
 
 lambda expressions or annoymous functions are usually, short, specific use, like a loop. Syntax:
-[pass by value, or reference to body of function](function parameters) -> return type {function body}(invokes function);
+[pass by value, or reference to body of function]<template>(function parameters) -> return type {function body}(invokes function);
 ````c++
 int n  = 5;
-auto a = [&n](const int val){ return val*n*5;}(3);	//returns 75
+auto a = [&n]<typename T>(const T val) -> T{ return val*n*5;}(3);	//returns 75
 ...
 ````
