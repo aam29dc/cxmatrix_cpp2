@@ -149,10 +149,12 @@ for(std::vector<int> v{1,2,3}; auto& i : v){
 }
 ````
 
-import, export, module: C++ std has to be latest (20/23), and "Scan Soruces for Module Dependencies" has to be set to yes, and the file extenstion has to be .ixx in VSC. Semicolon required.
+import, export, module: C++ std has to be latest (20/23), and "Scan Soruces for Module Dependencies" has to be set to yes, and the file extenstion has to be .ixx in VSC.
+Benefits are faster compile times, and less source files since declarations aren't required in seperate header files.
 ````c++
 //mod1.ixx
 export module mod1;
+int not_exported_func(){ return 23;}
 export int func_from_mod1(){
 	return 12;
 }
@@ -165,6 +167,7 @@ import <iostream>;
 
 int main(){
 	std::cout << func_from_mod1();	//prints out 12
+	not_exported_func();	// error: id not found
 	return 0;
 }
 ````
