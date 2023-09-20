@@ -116,10 +116,28 @@ void main(){
 }
 ````
 
-lambda expressions or annoymous functions are usually, short, specific use, like a loop. Syntax:
-[pass by value, or reference to body of function]<template>(function parameters) -> return type {function body}(invokes function);
+lambda expressions or annoymous functions are usually, short, specific use, like a loop. Syntax: [pass by value, or reference to body of function]<template>(function parameters) -> return type {function body}(invokes function);
 ````c++
 int n  = 5;
 auto a = [&n]<typename T>(const T val) -> T{ return val*n*5;}(3);	//returns 75
 ...
+````
+
+3-way comparison operator (<=>) returns negative, positive, or zero based on operands, auto keyword should be used:
+````c++
+int a = 2;
+int b = 3;
+
+auto result = a <=> b;
+
+if(result < 0){
+	std::cout << "less";
+}
+else if(result == 0){
+	std::cout << "equal";
+}
+else if(reuslt > 0){
+	std::cout << "greater";
+}
+//prints "less"
 ````
