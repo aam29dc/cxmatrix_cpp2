@@ -156,8 +156,9 @@ export module mod1;
 export int func_from_mod1(){
 	return 12;
 }
+````
 ...
-
+````c++
 //main.cpp
 import mod1;
 import <iostream>;
