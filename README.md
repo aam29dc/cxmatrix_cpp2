@@ -149,7 +149,7 @@ for(std::vector<int> v{1,2,3}; auto& i : v){
 }
 ````
 
-import, export, module: c++ std has to be latest (20/23), and "Scan Soruces for Module Dependencies" has to be set to yes, and the file extenstion has to be .ixx in VSC. Semicolon required.
+import, export, module: C++ std has to be latest (20/23), and "Scan Soruces for Module Dependencies" has to be set to yes, and the file extenstion has to be .ixx in VSC. Semicolon required.
 ````c++
 //mod1.ixx
 export module mod1;
