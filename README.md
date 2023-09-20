@@ -148,3 +148,22 @@ for(std::vector<int> v{1,2,3}; auto& i : v){
 	std::cout << i;	//prints 123
 }
 ````
+
+import, export, module: c++ std has to be latest (20/23), and "Scan Soruces for Module Dependencies" has to be set to yes, and the file extenstion has to be .ixx in VSC. Semicolon required.
+````c++
+//mod1.ixx
+export module mod1;
+export int func_from_mod1(){
+	return 12;
+}
+...
+
+//main.cpp
+import mod1;
+import <iostream>;
+
+int main(){
+	std::cout << func_from_mod1();	//prints out 12
+	return 0;
+}
+````
