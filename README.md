@@ -141,3 +141,10 @@ else if(reuslt > 0){
 }
 //prints "less"
 ````
+
+initilization in a ranged base for loop:
+````c++
+for(std::vector<int> v{1,2,3}; auto& i : v){
+	std::cout << i;	//prints 123
+}
+````
