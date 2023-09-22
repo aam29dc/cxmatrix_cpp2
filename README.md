@@ -171,3 +171,12 @@ int main(){
 	return 0;
 }
 ````
+declare global variables extern in hpp file and declare again in cpp file
+````c++
+//file.hpp
+extern int gv;
+````
+````c++
+//filecpp
+int gv;
+````
