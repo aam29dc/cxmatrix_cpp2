@@ -177,6 +177,6 @@ declare global variables extern in hpp file and declare again in cpp file
 extern int gv;
 ````
 ````c++
-//filecpp
+//file.cpp
 int gv;
 ````
