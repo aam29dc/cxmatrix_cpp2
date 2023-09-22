@@ -180,3 +180,9 @@ extern int gv;
 //file.cpp
 int gv;
 ````
+
+to add a description to a function /* descripe ur function */ when the function is brought up in an IDE like vs, .hpp comment seems to overwrite .cpp comment:
+````c++
+/* description */
+int func();
+````
