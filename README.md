@@ -186,3 +186,13 @@ to add a description to a function /* descripe ur function */ when the function 
 /* description */
 int func();
 ````
+to support chaining in your classes, the member function should return invoking object (this):
+````c++
+class A {
+public:
+	A& some(){
+		return *this;
+	}
+}
+A a.some().some();
+````
