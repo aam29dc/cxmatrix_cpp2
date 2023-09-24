@@ -196,3 +196,46 @@ public:
 }
 A a.some().some();
 ````
+move assignment, move constructor, copy assignment, copy constructor: syntax, how they operate, and how to invoke them.
+````c++
+class A {
+public:
+	//C
+	A() {}
+	//MA
+	A& operator=(A&& other) {
+		/*check if other is this, if other is nullptr,
+		assign this to other, then other to nullptr*/
+	}
+	//CA
+	A& operator=(const A& other) {
+		/*check if other is this, if other is nullptr
+		* if this is null allocate memory
+		* copy values into data elements
+		*/
+	}
+	//MC
+	A(A&& other) {
+		/*check if other is nullptr,
+		* then point this to other
+		* then other to nullptr
+		*/
+	}
+	//CC
+	A(const A& other) {
+		/*check if other is nullptr
+		* since its a constructor: allocate memory,
+		* copy values into data elements
+		*/
+	}
+};
+#include <vector>
+int main() {
+	A a();	//C
+	A b(a);	//C, CC
+	a = b; //CA
+	a = std::move(b); //MA
+	std::vector<A> vec(A()) // C -> MC
+	return 0;
+}
+````
