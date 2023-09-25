@@ -239,3 +239,23 @@ int main() {
 	return 0;
 }
 ````
+With a Singleton class, the static instance should be defined in the .cpp file, otherwise you'll get a linker error from including multiple instances when including it in the .hpp file:
+````
+//.hpp file
+class Singleton{
+private:
+	Singleton() = default;
+	~Singleton() = default;
+public:
+	Singleton(const Singleton&) = delete;
+	Singleton& operator=(const Singleton&) = delete;
+	static Singleton* instance(){
+		if(nullptr == instance) return instance = new Singleton;
+		return instance;
+	}
+}
+
+//.cpp file
+Singleton* Singleton::instance = nullptr;
+...
+````
