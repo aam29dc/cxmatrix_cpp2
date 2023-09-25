@@ -259,3 +259,39 @@ public:
 Singleton* Singleton::instance = nullptr;
 ...
 ````
+access modifiers with inheritance: B is a subtype of A, and within B we have access to public and protected data members of A, outside of B we only have access to public. B never has access to private data members. Changing the inheritance access modifier shifts the modifiers 1.public -> 2.protected -> 3.private. If public then they stay the same, if private then they're all private, etc.
+````c++
+class A {
+private:
+	int x;
+protected:
+	int y;
+public:
+	int z;
+	A() : x(0), y(1), z(2) {
+		A::x = -1;
+		A::A::A::A::A::x = -2;	//unusal but it works
+	}
+
+	int retX() const { return x; }
+	int retY() const { return y; }
+
+};
+
+class B : public A {
+public:
+	B() {
+		/*B::A::x = 0;
+		B::x = 0;
+		x = 0;*/
+
+		B::A::y = 4;
+		B::y = 4;
+		y = 4;
+
+		B::A::z = 3;
+		B::z = 3;
+		z = 3;
+	}
+};
+````
