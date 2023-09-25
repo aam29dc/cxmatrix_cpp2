@@ -240,7 +240,7 @@ int main() {
 }
 ````
 With a Singleton class, the static instance should be defined in the .cpp file, otherwise you'll get a linker error from including multiple instances when including it in the .hpp file:
-````
+````c++
 //.hpp file
 class Singleton{
 private:
