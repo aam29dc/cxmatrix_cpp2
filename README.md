@@ -281,16 +281,11 @@ public:
 class B : public A {
 public:
 	B() {
-		/*B::A::x = 0;
+		/*B::A::x = 0;	// all the same, and all access violations
 		B::x = 0;
 		x = 0;*/
 
-		B::A::y = 4;
-		B::y = 4;
 		y = 4;
-
-		B::A::z = 3;
-		B::z = 3;
 		z = 3;
 	}
 };
