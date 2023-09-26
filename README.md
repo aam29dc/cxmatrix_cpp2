@@ -291,7 +291,7 @@ public:
 };
 ````
 
-with inheritance, a calling function that uses the base class in the parameter is able to take derived classes as a value. It'll act as the base class. Here: B inherits A, B is a subclass of A, etc.
+with inheritance, a calling function that uses the base class in the parameter is able to take derived classes as a value. It'll act as the base class. Derived classes cannot take base or classes before in ther chain hierarchy as a value in the parameter. Here: B inherits A, B is a subclass of A, etc.
 ````c++
 void takes_a(A* a) {
 	a->say();
