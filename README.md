@@ -2,7 +2,7 @@
 
 strint is a string with added functionality of an bool, so branchless string operations with multiplication and addition are possible:
   ````c++
-    return strint("Rows can't be zero.")*(rows <= 0) + strint("Cols can't be zero.")*(cols <= 0);
+    return strint("Rows can't be zero.")*(rows <= 0)+strint("Cols can't be zero.")*(cols <= 0);
   ````
 
 In this module I tried using strict c++, its newer features, the stl, and avoided using raw pointers. This wasn't about rewriting cxmatrix, but learning more modern c++.
@@ -181,7 +181,7 @@ extern int gv;
 int gv;
 ````
 
-to add a description to a function /* descripe ur function */ when the function is brought up in an IDE like vs, .hpp comment seems to overwrite .cpp comment:
+to add a description to a function /* describe ur function */ when the function is brought up in an IDE like vs, .hpp comment seems to overwrite .cpp comment:
 ````c++
 /* description */
 int func();
@@ -289,4 +289,34 @@ public:
 		z = 3;
 	}
 };
+````
+
+with inheritance, a calling function that uses the base class in the parameter is able to take derived classes as a value. B inherits A, B is a subclass of A, etc.
+````c++
+void takes_a(A* a) {
+	a->say();
+	return;
+}
+
+void takes_b(B* b) {
+	b->say();
+	return;
+}
+
+int main() {
+	A a;
+	A* Ap = new A;
+	A* Ab = new B;
+	B b;
+	B* Bp = new B;
+
+	//prints out // A A B A B A A
+	takes_a(&a);
+	takes_a(&b);
+	takes_b(&b);
+	takes_a(Bp);
+	takes_b(Bp);
+	takes_a(Ap);
+	takes_a(Ab);
+}
 ````
