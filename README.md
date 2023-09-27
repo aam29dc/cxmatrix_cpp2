@@ -359,3 +359,24 @@ int main() {
 	takes_a(Ab);	//b
 } // A B B B B A B
 ````
+
+When a derived class (B) is created on the heap, the base classes destructor should be set to virtual, so the derived class is able to invoke the destructor on the base class. When class B is created on the stack, when it goes out of scope, it'll invoke the base destructor virutual or not.
+````c++
+class A {
+public:
+	A() { std::cout << "AC\n"; }
+	virtual ~A() { std::cout << "AD\n"; }
+};
+
+class B : public A {
+public:
+	B() : b_x(1) { std::cout << "BC\n"; }
+	~B() { std::cout << "BD\n"; }
+};
+
+int main(){
+	B b; //this will go out of scope and call the destructor on A regardless if its virtual: AC,BC,BD,AD
+	A *ab = new B; // AC BC,
+	delete ab;	// now: BD AD
+}
+````
