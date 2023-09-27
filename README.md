@@ -360,7 +360,7 @@ int main() {
 } // A B B B B A B
 ````
 
-When a derived class (B) is created on the heap, the base classes destructor should be set to virtual, so the derived class is able to invoke the destructor on the base class. When class B is created on the stack, when it goes out of scope, it'll invoke the base destructor virutual or not.
+When a derived class (B) is created on the heap, the base classes destructor should be set to virtual, so the derived class is able to invoke the destructor on the base class. When class B is created on the stack, when it goes out of scope, it'll invoke the base destructor virtual or not.
 ````c++
 class A {
 public:
