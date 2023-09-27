@@ -320,7 +320,7 @@ int main() {
 	takes_a(Ab);
 }
 ````
-With the above classes, when A's function say is virtual, then takes_a(&b) will call B's say() instead of A's even though the parameter is type A, it will invoke the derived classes function (if it exists, otherwise it'll use the Base Class).
+With the above classes, when A's function say() is virtual, then takes_a(&b) will call B's say() instead of A's even though the parameter is type A, it will invoke the derived classes function (if it exists, otherwise it'll use the Base Class).
 ````c++
 class A {
 public:
