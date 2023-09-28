@@ -380,7 +380,7 @@ int main(){
 	delete ab;	// now: BD AD
 }
 ````
-There are two different syntaxes for operator overloading, one with friend and without. The friend will take two parameters. The nonfriend will only take one, and we'll have to use (this) explicitly access the data memebers on the called object. I prefer to use the nonfriend way for overloading operators, unless its: cout <<.  cin >>, etc Friends should come from other foreign classes.
+There are two different syntaxes for operator overloading, one with friend and one without. The friend will take two parameters. The nonfriend will only take one, and we'll have to use (this) to explicitly access the data memebers on the called object. I prefer to use the nonfriend way for overloading operators, unless its: cout <<.  cin >>, etc Friends should come from other foreign classes.
 ````c++
 class Vector2D{
 private:
