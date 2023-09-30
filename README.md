@@ -246,6 +246,7 @@ class Singleton{
 private:
 	Singleton() = default;
 	~Singleton() = default;
+	static Singleton* instance;
 public:
 	Singleton(const Singleton&) = delete;
 	Singleton& operator=(const Singleton&) = delete;
