@@ -93,7 +93,7 @@ A::B::B() {
 	//constructor
 }
 ````
-Reference Qualifiers for member functions, invoked for rvalues (&&) or lvalues (&). Can have either both r/l-values or neither (regular function) only.
+Reference Qualifiers for member functions, invoked for rvalues (&&) or lvalues (&). Can have either both r/l-values or neither (regular function) only. An lvalue is an object(int,...), and a rvalue is a value (32).
 ````c++
 class C {
 public:
@@ -408,5 +408,29 @@ int main(){
 	int x = 1;
 	std::cout << ::x << " " << x;	//prints "0 1"
 	return 0;
+}
+````
+
+with multiple inheritances, virtual inheritance prevents additional copies from a Base class when other classes are using that Base.
+````c++
+class A {
+    public:
+    int x;
+    A() : x(0) {}
+};
+
+class B : virtual public A {
+};
+
+class C : virtual public A {
+};
+
+class D : public B, public C {
+};
+
+int main()
+{
+    D d;
+    std::cout << d.x; //otherwise if B and C didn't inherit A with virutal we would have to d.B::x or d.C::x as it is disambigious, otherwise it uses the first inherited classes x (in this case it would be B)
 }
 ````
