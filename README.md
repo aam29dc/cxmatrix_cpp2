@@ -400,3 +400,13 @@ public:
 	}
 }
 ````
+
+two variables can be used w/ the same name, if one is global and the other is local scope, the scope resolution operator `::` is used to refer to the global scope variable.
+````c++
+int x = 0;
+int main(){
+	int x = 1;
+	std::cout << ::x << " " << x;	//prints "0 1"
+	return 0;
+}
+````
