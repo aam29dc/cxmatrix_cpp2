@@ -434,3 +434,11 @@ int main()
     std::cout << d.x; //otherwise if B and C didn't inherit A with virutal we would have to d.B::x or d.C::x as it is disambigious, otherwise it uses the first inherited classes x (in this case it would be B)
 }
 ````
+Here this union is always the size of a `long long` even when its used as a int. Unions can only be one, not all, and its the size of its largest element.
+````c++
+union Abc {
+	int x;
+	float y;
+	long long z;
+}
+````
