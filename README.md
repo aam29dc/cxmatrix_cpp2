@@ -196,7 +196,7 @@ public:
 }
 A a.some().some();
 ````
-move assignment, move constructor, copy assignment, copy constructor: syntax, how they operate, and how to invoke them.
+move assignment, move constructor, copy assignment, copy constructor: syntax, how they operate, and how to invoke them. Copy makes copies, Move moves or shares without making a copy, etc
 ````c++
 class A {
 public:
@@ -321,7 +321,7 @@ int main() {
 	takes_a(Ab);
 }
 ````
-With the above classes, when A's function say() is virtual, then takes_a(&b) will call B's say() instead of A's even though the parameter is type A, it will invoke the derived classes function (if it exists, otherwise it'll use the Base Class).
+When A's function say() is virtual, then takes_a(&b) will call B's say() instead of A's even though the parameter is type A, it will invoke the derived classes function (if it exists, otherwise it'll use the Base Class).
 ````c++
 class A {
 public:
