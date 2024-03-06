@@ -59,7 +59,7 @@ public:
 Matrix<std::size_t> Mat;
 ````
 
-pointer to class memebers, other than being more explicit on the type of pointer, idk other uses.
+pointer to class members, other than being more explicit on the type of pointer, idk other uses.
 ````c++
 size_t Matrix<int>::* name = &Matrix<int>::accessible;
 ````
@@ -441,4 +441,17 @@ union Abc {
 	float y;
 	long long z;
 }
+````
+a `constexpr` pointer is equal to a `const` pointer. A constexpr function is a function that can be used in a constant expression; it should only have one return, and it is evaluated at compile time. A literal is a constant expression. Constexpr functions are implicitly inline. A inline function is a function that doesn't use the stack call operations, it just replaces the call with the inner body.
+````c++
+constexpr int* cep = nullptr;	// these two pointers are
+int* const cp = nullptr;	// the same kind
+
+constexpr int func() {		// this function is implicitly inline and is evaluted at compile time
+	return 123;
+}
+````
+`decltype` is like `auto` except that it doesn't evaluate the expression of the function. It just takes its return type without evaluation.
+````c++
+decltype(f()) num = 123;	// num has the type of the return type of f()
 ````
