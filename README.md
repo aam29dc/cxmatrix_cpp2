@@ -455,3 +455,19 @@ constexpr int func() {		// this function is implicitly inline and is evaluted at
 ````c++
 decltype(f()) num = 123;	// num has the type of the return type of f()
 ````
+If a data member is defined as `mutable` then even if the class object is defined as `const` the mutable data member can still be changed.
+````c++
+class A{
+public:
+	int x;
+	mutable int y;
+	A() : x(0), y(1) {}
+}
+
+int main(){
+	const A a;	// a is const, except its mutable data member y.
+	a.x = 123;	// error: a is const
+	a.y = 234;	// ok: y is defined a mutable, despite the class object being const
+}
+
+````
