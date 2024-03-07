@@ -471,7 +471,7 @@ int main(){
 }
 
 ````
-Comments to help describe the function, `\param` and `\returns` within the comment section before a function in the .c/.cpp file.
+Comments to help describe the function, `\param` and `\returns` within the comment section before a function in the .c/.cpp file, for IDE's when a user mouses over a function.
 ````c++
 /* generate shape with lines going from every point
 * \param num the number of sides
