@@ -471,3 +471,34 @@ int main(){
 }
 
 ````
+Comments to help describe the function, `\param` and `\returns` within the comment section before a function in the .c/.cpp file.
+````c++
+/* generate shape with lines going from every point
+* \param num the number of sides
+* \param x the x offset of the center
+* \param y the y offset of the center
+* \param rad the radius or size of the shape
+* \param rot the rotation of the shape
+* \returns void
+*/
+void drawLinedShape(const unsigned int num, const int x = 0, const int y = 0,
+	const unsigned int rad = 10, const float rot = 0.0f) {
+
+	SDL_Point pt = { 0 }, pt2 = { 0 };
+
+	pt.x = (int)(rad * cos(0 + rot)) + x;
+	pt.y = (int)(rad * sin(0 + rot)) + y;
+
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+
+	for (unsigned n = 1; n <= num; n++) {
+		pt.x = (int)(rad * cos(((n * 2 * M_PI) / num) + rot)) + x;
+		pt.y = (int)(rad * sin(((n * 2 * M_PI) / num) + rot)) + y;
+		for (unsigned m = n+1; m <= num; m++) {
+			pt2.x = (int)(rad * cos(((m * 2 * M_PI) / num) + rot)) + x;
+			pt2.y = (int)(rad * sin(((m * 2 * M_PI) / num) + rot)) + y;
+			SDL_RenderDrawLine(renderer, pt.x, pt.y, pt2.x, pt2.y);
+		}
+	}
+}
+````
