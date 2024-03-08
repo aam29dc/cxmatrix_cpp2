@@ -501,8 +501,13 @@ auto main() -> int {
 ````
 
 `explicit` for constructors, to prevent implicit use of a constructor.
+
 `noexcept(true)` on a function to prevent propagation of an exception in a function. `noexcept(false)` is the default on every function.
-`override` on virtual member functions
+
+`override` on virtual member functions in derived classes
+
 `volatile` on variables that have side effects
+
 `dynamic_cast<class>` for down casting for example from a base class to a derived class.
+
 `const_cast<type>` for removing constness on a function; helps prevent code duplication, instead of having to duplicate a function with const.
