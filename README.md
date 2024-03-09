@@ -511,3 +511,30 @@ auto main() -> int {
 `dynamic_cast<class>` for down casting for example from a base class to a derived class.
 
 `const_cast<type>` for removing constness on a function; helps prevent code duplication, instead of having to duplicate a function with const.
+
+Three different solutions for templated classes having a seperate header file for declarations and a cpp file for definitions.
+-First solution is to have one header file, and no cpp file, and to define everything in the header file.
+-Second solution is explicit initiation of all types the class will take: `template class Node<int>;` etc.
+-Third solution is to include the cpp file in the header file at the end. (use include guards on both files).
+````c++
+//.hpp file
+	#ifndef NODE_DEC
+	#define NODE_DEC
+	template<typename T>
+	class Node {
+		T data;
+	public:
+		Node();
+	}
+	#include "Node.cpp"
+	#endif
+
+//.cpp file
+	#ifndef NODE_DEF
+	#define NODE_DEF
+	template<typename T>
+	Node<T>::Node(){
+		//yada yada yada
+	}
+	#endif
+````
