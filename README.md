@@ -518,7 +518,7 @@ Three different solutions for templated classes having a seperate header file fo
 
 -First solution is to have one header file, and no cpp file, and to define everything in the header file.
 
--Second solution is explicit initiation of all types the class will take: `template class Node<int>;` etc.
+-Second solution is explicit initiation of all types the class will take: `template class Node<int>;` etc, in the cpp file.
 
 -Third solution is to include the cpp file in the header file at the end. (use include guards on both files).
 
