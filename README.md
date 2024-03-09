@@ -526,21 +526,21 @@ Three different solutions for templated classes having a seperate header file fo
 //.hpp file
 	#ifndef NODE_DEC
 	#define NODE_DEC
-	template<typename T>
-	class Node {
-		T data;
-	public:
-		Node();
-	}
-	#include "Node.cpp"
+		template<typename T>
+		class Node {
+			T data;
+		public:
+			Node();
+		}
+		#include "Node.cpp"
 	#endif
 
 //.cpp file
 	#ifndef NODE_DEF
 	#define NODE_DEF
-	template<typename T>
-	Node<T>::Node(){
-		//yada yada yada
-	}
+		template<typename T>
+		Node<T>::Node(){
+			//yada yada yada
+		}
 	#endif
 ````
