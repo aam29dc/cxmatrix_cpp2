@@ -544,3 +544,18 @@ Three different solutions for templated classes having a seperate header file fo
 		}
 	#endif
 ````
+Template metaprogramming similar to constexpr for computing at compile time. `constexpr` is preferred for readability. TMP can sometimes have faster compile times.
+````c++
+template<unsigned int n>
+struct factorial {
+	enum { v = n*factorial<n-1>::v }
+}
+template<>
+struct factorial<0> {
+	enum { v = 1 }
+}
+
+int main() {
+	auto result = factorial<5>::v;
+}
+````
