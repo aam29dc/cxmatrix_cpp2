@@ -544,7 +544,7 @@ Three different solutions for templated classes having a seperate header file fo
 		}
 	#endif
 ````
-Template metaprogramming similar to constexpr for computing at compile time. `constexpr` is preferred for readability. TMP can sometimes have faster compile times.
+Template metaprogramming similar to constexpr for computing at compile time. `constexpr` is preferred for readability. TMP can sometimes have faster compile times, unless compile time/performance is an issue `constexpr` should be used instead.
 ````c++
 template<unsigned int n>
 struct factorial {
