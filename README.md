@@ -76,6 +76,11 @@ namespace {
 //header2.hpp
 #include <header.hpp>
 int x;	// this doesn't conflict with header.hpp x
+
+````c++
+code
+````
+
 ````
 Nested classes, where we can define the nested class later.
 ````c++
