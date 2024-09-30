@@ -77,11 +77,25 @@ namespace {
 #include <header.hpp>
 int x;	// this doesn't conflict with header.hpp x
 
-````c++
-code
-````
 
 ````
+When we define a Base class, and a Derived class, we must use pointers to use polymorphic behavior.
+````c++
+class A{
+virtual void func();
+};
+
+class B: public A{
+void func();
+}
+
+void main(){
+	A a[10];
+	B b;
+	a[0] = b;	// this will end up calling the base class function, because we need to use pointers to get polymorphic behavior
+}
+````
+
 Nested classes, where we can define the nested class later.
 ````c++
 class A {
