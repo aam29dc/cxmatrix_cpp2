@@ -578,3 +578,22 @@ int main() {
 	auto result = factorial<5>::v;
 }
 ````
+
+A circular dependency of header files results in a compile error. We have to remove the dependency of the two: create a seperate header file of the dependecy, forward declare classes, or make it all one header file.
+````c++
+//header A
+#include "b.hpp"
+class A{
+public:
+	B b;
+};
+
+//header B
+#include "a.hpp"
+class B{
+public:
+	A a;
+};
+
+//this results in a compile error b.c of circular/recursive dependecy of header files.
+````
