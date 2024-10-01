@@ -579,7 +579,7 @@ int main() {
 }
 ````
 
-A circular dependency of header files results in a compile error. We have to remove the dependency of the two: create a seperate header file of the dependecy, forward declare classes, or make it all one header file.
+A circular dependency of header files results in a compile error. We have to remove the dependency of the two: 1). create a seperate header file of the dependecy, 2). forward declare classes, or 3). make it all one header file.
 ````c++
 //header A
 #include "b.hpp"
