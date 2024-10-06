@@ -48,6 +48,20 @@ getting typeid at runtime with, typeid, but conditional types in overloaded ~ or
 if(typeid(_m[0]) != typeid(float) && typeid(_m[0]) != typeid(double) ...)
 ````
 
+a function pointer can't point a a function within a class (member function): we either change the function pointer or make the member function `static` (one function for all objects of this type):
+````c++
+void (*cb)() = nullptr;
+
+class A{
+public:
+	void func(){
+	}
+}
+
+cb = func; 	// error: func is value of type A::void not void
+
+````
+
 specialized template for certain types, ex: size_t, by inheriting we can also keep original class functions, etc
 ````c++
 template <>
